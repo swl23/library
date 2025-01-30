@@ -54,7 +54,8 @@ function storeInput(formId) {
 document.addEventListener("DOMContentLoaded", function() {
 	const newButton = document.getElementById("new");
 	const bookForm = document.getElementById("book-form");
-	const createBook = document.getElementById("add");
+	const addButton = document.getElementById("add")
+	const cancelButton = document.getElementById("cancel")
 
 	displayBooks(myLibrary);
 
@@ -72,7 +73,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		addBookToLibrary(newName, newAuthor, newLength, newRead);
 		resetDisplay(myLibrary)
 		displayBooks(myLibrary);
+
 		return false;
+	});
+
+	bookForm.addEventListener("reset", () => {
+		bookForm.close()
 	})
 
 });
