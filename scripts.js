@@ -36,6 +36,12 @@ function displayBooks(arr) {
 			table.appendChild(newRow);
 		}
 		card.appendChild(table);
+
+		const btn = document.createElement("button");
+		btn.setAttribute("class", "delete");
+		btn.textContent = "X"
+		card.appendChild(btn);
+		
 		displayArea.appendChild(card);
 	})
 }

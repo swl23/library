@@ -32,4 +32,11 @@ body .container#display {
 
 body .container#display > .card {
 	border: solid 1px blue;
+	position: relative;
+}
+
+button.delete {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
