@@ -4,6 +4,15 @@ body {
 	justify-items: center;
 }
 
+body dialog#book-form > form > div {
+	margin-bottom: 1rem;
+}
+
+body dialog#book-form > form > div > button {
+	display: block;
+	margin-bottom: 1rem;
+}
+
 body .container#buttons {
 	grid-column: 1;
 	border: solid 1px red;
@@ -17,4 +26,10 @@ body .container#display {
 	grid-column: 2;
 	border: solid 1px green;
 	display: grid;
+	padding: 10px;
+	gap: 25px;
+}
+
+body .container#display > .card {
+	border: solid 1px blue;
 }
