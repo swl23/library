@@ -19,9 +19,12 @@ function addBookToLibrary(name, author, length, read) {
 
 function displayBooks(arr) {
 	arr.forEach(book => {
-		const displayArea = document.getElementById("display")
+		const arrayPosition = arr.indexOf(book);
+		
+		const displayArea = document.getElementById("display");
 		const card = document.createElement("div");
 		card.setAttribute("class", "card");
+		card.setAttribute("id", arrayPosition)
 		const table = document.createElement("table");
 		
 		for (const [key, value] of Object.entries(book)) {
@@ -40,13 +43,18 @@ function displayBooks(arr) {
 		const btn = document.createElement("button");
 		btn.setAttribute("class", "delete");
 		btn.textContent = "X"
+		btn.addEventListener("click", () => {
+			deleteBook(myLibrary, arrayPosition);
+			resetDisplay();
+			displayBooks(myLibrary);
+	})
 		card.appendChild(btn);
 		
 		displayArea.appendChild(card);
-	})
-}
+	}
+)}
 
-function resetDisplay(arr) {
+function resetDisplay() {
 	const displayArea = document.getElementById("display");
 	displayArea.textContent = "";
 }
@@ -56,12 +64,14 @@ function storeInput(formId) {
 	return input.value
 }
 
+function deleteBook(arr, index) {
+	arr.splice(Number(index), 1);
+	console.log(arr)
+}
 
 document.addEventListener("DOMContentLoaded", function() {
 	const newButton = document.getElementById("new");
 	const bookForm = document.getElementById("book-form");
-	const addButton = document.getElementById("add")
-	const cancelButton = document.getElementById("cancel")
 
 	displayBooks(myLibrary);
 
@@ -77,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		const newRead = storeInput("read");
 
 		addBookToLibrary(newName, newAuthor, newLength, newRead);
-		resetDisplay(myLibrary)
+		resetDisplay()
 		displayBooks(myLibrary);
 
 		return false;
@@ -85,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	bookForm.addEventListener("reset", () => {
 		bookForm.close()
-	})
+	});
 
 });
 
