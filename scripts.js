@@ -29,11 +29,56 @@ function displayBooks(arr) {
 		
 		for (const [key, value] of Object.entries(book)) {
 			let newRow = document.createElement("tr");
+			newRow.setAttribute("class", `${key}`);
 			let header = document.createElement("th");
-			header.textContent = `${key}`;
 			let data = document.createElement("td");
-			data.textContent = `${value}`;
+			header.textContent = `${key}`;
 
+			if (key === "read") {
+				const readForm = document.createElement("form");
+				const fieldSet = document.createElement("fieldset");
+				const yes = document.createElement("div");
+				const no = document.createElement("div");
+
+				const yesLabel = document.createElement("label");
+				yesLabel.setAttribute("for", "yesRead");
+				yesLabel.textContent = "Yes";
+				const yesInput = document.createElement("input");
+				yesInput.setAttribute("id", "yesRead");
+				yesInput.setAttribute("name", "read");
+				yesInput.setAttribute("type", "radio");
+				yesInput.setAttribute("value", "Yes");
+
+				const noLabel = document.createElement("label");
+				noLabel.setAttribute("for", "noRead");
+				noLabel.textContent = "No";
+				const noInput = document.createElement("input");
+				noInput.setAttribute("id", "noRead");
+				noInput.setAttribute("name", "read");
+				noInput.setAttribute("type", "radio");
+				noInput.setAttribute("value", "No");
+
+				
+				if (`${value}` === "Yes") {
+					yesInput.checked = true;
+				}
+				else if (`${value}` === "No") {
+					noInput.checked = true;
+				};
+				
+				yes.appendChild(yesInput);
+				yes.appendChild(yesLabel);
+				no.appendChild(noInput);
+				no.appendChild(noLabel);
+				fieldSet.appendChild(yes);
+				fieldSet.appendChild(no);
+				readForm.appendChild(fieldSet);
+				data.appendChild(readForm);
+			}
+			else {
+				data.textContent = `${value}`;
+				console.log("Booty")
+			}
 			newRow.appendChild(header);
 			newRow.appendChild(data);
 			table.appendChild(newRow);

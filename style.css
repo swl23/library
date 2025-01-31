@@ -1,7 +1,28 @@
+button, form, input, label, select, p {
+	font: inherit;
+	margin: inherit;
+	padding: inherit;
+}
+
 body {
+	margin: 0;
+	padding: 0;
+	font-family: "Inter28pt-Regular", "Helvetica", sans-serif;
+	font-size: 16px;
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto 1fr;
+	grid-template-columns: 1fr auto 1fr;
 	justify-items: center;
+}
+
+body > div {
+	grid-column: 2;
+	border: solid 1px red;
+}
+
+body div#header {
+	grid-column: 1 / 4;
+	font-size: 3rem;
 }
 
 body dialog#book-form > form > div {
@@ -14,8 +35,7 @@ body dialog#book-form > form > div > button {
 }
 
 body .container#buttons {
-	grid-column: 1;
-	border: solid 1px red;
+	grid-row: 2;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	justify-items: center;
@@ -23,8 +43,7 @@ body .container#buttons {
 }
 
 body .container#display {
-	grid-column: 2;
-	border: solid 1px green;
+	grid-row: 3;
 	display: grid;
 	padding: 10px;
 	gap: 25px;
