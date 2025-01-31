@@ -1,9 +1,9 @@
 const myLibrary = [];
 
-addBookToLibrary("Batman", "Bob Kane", "27 pages", "not read");
-addBookToLibrary("Slaughterhouse-Five", "Kurt Vonnegut Jr.", "275 pages", "have read");
-addBookToLibrary("Will You Please Be Quiet, Please?", "Raymond Carver", "181 pages", "have read");
-addBookToLibrary("The Nix", "Nathan Hill", "625 pages", "have read");
+addBookToLibrary("Batman", "Bob Kane", "27 pages", "No");
+addBookToLibrary("Slaughterhouse-Five", "Kurt Vonnegut Jr.", "275 pages", "Yes");
+addBookToLibrary("Will You Please Be Quiet, Please?", "Raymond Carver", "181 pages", "No");
+addBookToLibrary("The Nix", "Nathan Hill", "625 pages", "Yes");
 
 function Book(name, author, length, read) {
 	this.name = name;
@@ -98,6 +98,3 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 });
-
-
-
