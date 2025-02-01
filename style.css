@@ -91,6 +91,23 @@ body > .container .container#display > .card {
 	border-radius: 1rem;
 }
 
+body > .container .container#display > .card > table {
+	border-collapse: separate;
+	border-spacing: 0 1rem;
+}
+
+body > .container .container#display > .card > table > tr > th {
+	padding-right: 15px;
+	font-style: italic;
+	font-weight: 600;
+	text-align: right;
+}
+
+body > .container .container#display > .card > table > * {
+	text-align: left;
+	vertical-align: top;
+}
+
 button.delete {
 	position: absolute;
 	bottom: 0;
@@ -106,4 +123,28 @@ button.delete {
 button.delete:hover {
 	cursor: pointer;
 	color: rgba(0, 0, 0, 0.549);
+}
+
+fieldset {
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+td > form {
+	padding: 0;
+	margin: 0;
+}
+
+fieldset > div {
+	display: inline-block
+}
+
+fieldset > div:first-child {
+	padding-right: 15px;
+}
+
+fieldset > div > label {
+	padding-left: 5px;
 }
