@@ -87,7 +87,7 @@ function displayBooks(arr) {
 
 		const btn = document.createElement("button");
 		btn.setAttribute("class", "delete");
-		btn.textContent = "X"
+		btn.textContent = "×"
 		btn.addEventListener("click", () => {
 			deleteBook(myLibrary, arrayPosition);
 			resetDisplay();
