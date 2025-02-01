@@ -73,10 +73,11 @@ body > .container .container#buttons > .row > button#new:active {
 body > .container .container#display {
 	grid-row: 3;
 	display: grid;
+	justify-content: center;
 	padding: 1rem;
 	gap: 25px;
 	width: clamp(567px, 70vw, 1600px);
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
 	background-color: rgb(40, 40, 40);
 	border-radius: 1rem;
 }
@@ -108,6 +109,13 @@ body > .container .container#display > .card > table > * {
 	vertical-align: top;
 }
 
+body > .container .container#display > p#no-books {
+	text-align: center;
+	color: whitesmoke;
+	font-family: "GambadoScotchForte";
+	font-size: 2rem;
+}
+
 button.delete {
 	position: absolute;
 	bottom: 0;
@@ -123,6 +131,10 @@ button.delete {
 button.delete:hover {
 	cursor: pointer;
 	color: rgba(0, 0, 0, 0.549);
+}
+
+button.delete:active {
+	transform: translate(1px, 1px);
 }
 
 fieldset {
