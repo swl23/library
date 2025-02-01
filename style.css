@@ -46,7 +46,6 @@ body > .container dialog#book-form > form > div {
 }
 
 body > .container dialog#book-form > form > div > button {
-	display: block;
 	margin-bottom: 1rem;
 }
 
@@ -90,11 +89,13 @@ body > .container .container#display > .card {
 	background-color: rgb(210, 210, 210);
 	border: none;
 	border-radius: 1rem;
+	display: grid;
 }
 
 body > .container .container#display > .card > table {
 	border-collapse: separate;
 	border-spacing: 0 1rem;
+	align-self: center
 }
 
 body > .container .container#display > .card > table > tr > th {
@@ -159,4 +160,12 @@ fieldset > div:first-child {
 
 fieldset > div > label {
 	padding-left: 5px;
+}
+
+dialog#book-form {
+	border-radius: 1rem;
+}
+
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.4);
 }

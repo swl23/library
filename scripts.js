@@ -2,8 +2,11 @@ const myLibrary = [];
 
 addBookToLibrary("Batman", "Bob Kane", "27 pages", "No");
 addBookToLibrary("Slaughterhouse-Five", "Kurt Vonnegut Jr.", "275 pages", "Yes");
-addBookToLibrary("Will You Please Be Quiet, Please?", "Raymond Carver", "181 pages", "No");
+addBookToLibrary("Fake Accounts", "Lauren Oyler", "181 pages", "No");
 addBookToLibrary("The Nix", "Nathan Hill", "625 pages", "Yes");
+addBookToLibrary("Weather", "Jenny Offill", "225 pages", "Yes");
+addBookToLibrary("The Girls", "Emma Cline", "175 pages", "Yes");
+addBookToLibrary("Heat", "Bill Buford", "313 pages", "Yes");
 
 function Book(name, author, length, read) {
 	this.name = name;
@@ -79,7 +82,6 @@ function displayBooks(arr) {
 				}
 				else {
 					data.textContent = `${value}`;
-					console.log("Booty")
 				}
 				newRow.appendChild(header);
 				newRow.appendChild(data);
@@ -120,7 +122,6 @@ function storeInput(formId) {
 
 function deleteBook(arr, index) {
 	arr.splice(Number(index), 1);
-	console.log(arr)
 }
 
 document.addEventListener("DOMContentLoaded", function() {
