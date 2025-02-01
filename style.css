@@ -56,10 +56,16 @@ body > .container .container#buttons {
 body > .container .container#buttons > .row > button#new {
 	border-radius: 0.5rem;
 	padding: 1rem;
+	border: 1px solid black;
 }
 
 body > .container .container#buttons > .row > button#new:hover {
 	cursor: pointer;
+	background-color: rgb(213, 213, 213);
+}
+
+body > .container .container#buttons > .row > button#new:active {
+	transform: translate(1px, 1px);
 }
 
 body > .container .container#display {
