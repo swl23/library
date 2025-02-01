@@ -10,46 +10,57 @@ body {
 	font-family: "Inter28pt-Regular", "Helvetica", sans-serif;
 	font-size: 16px;
 	display: grid;
+	justify-items: center;
+	background-image: linear-gradient(to right, rgb(0, 0, 107), rgba(145, 145, 25, 0.729))
+}
+
+body > .container {
+	display: grid;
 	grid-template-rows: auto auto 1fr;
 	grid-template-columns: 1fr auto 1fr;
 	justify-items: center;
+	gap: 1rem;
 }
 
-body > div {
+body > .container > div {
 	grid-column: 2;
-	border: solid 1px red;
 }
 
-body div#header {
+body > .container div#header {
 	grid-column: 1 / 4;
-	font-size: 3rem;
+	padding: 1rem;
+	background-color: rgb(40, 40, 40);
+	color: whitesmoke;
+	border-radius: 1rem;
 }
 
-body dialog#book-form > form > div {
+body > .container div#header p {
+	text-align: center;
+	font-size: 3rem;
+	font-family: "MapRoman-Condensed";
+}
+
+body > .container dialog#book-form > form > div {
 	margin-bottom: 1rem;
 }
 
-body dialog#book-form > form > div > button {
+body > .container dialog#book-form > form > div > button {
 	display: block;
 	margin-bottom: 1rem;
 }
 
-body .container#buttons {
+body > .container .container#buttons {
 	grid-row: 2;
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	justify-items: center;
-	gap: 25px;
 }
 
-body .container#display {
+body > .container .container#display {
 	grid-row: 3;
 	display: grid;
 	padding: 10px;
 	gap: 25px;
 }
 
-body .container#display > .card {
+body > .container .container#display > .card {
 	border: solid 1px blue;
 	position: relative;
 }
