@@ -7,7 +7,7 @@ button, form, input, label, select, p {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: "Inter28pt-Regular", "Helvetica", sans-serif;
+	font-family: "GraphikTrial-Regular", "Helvetica", sans-serif;
 	font-size: 16px;
 	display: grid;
 	justify-items: center;
@@ -51,6 +51,15 @@ body > .container dialog#book-form > form > div > button {
 
 body > .container .container#buttons {
 	grid-row: 2;
+}
+
+body > .container .container#buttons > .row > button#new {
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+
+body > .container .container#buttons > .row > button#new:hover {
+	cursor: pointer;
 }
 
 body > .container .container#display {
