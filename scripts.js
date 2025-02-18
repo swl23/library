@@ -1,24 +1,24 @@
 const myLibrary = [];
 
-addBookToLibrary("Batman", "Bob Kane", "27 pages", "No");
-addBookToLibrary("Slaughterhouse-Five", "Kurt Vonnegut Jr.", "275 pages", "Yes");
-addBookToLibrary("Fake Accounts", "Lauren Oyler", "181 pages", "No");
-addBookToLibrary("The Nix", "Nathan Hill", "625 pages", "Yes");
-addBookToLibrary("Weather", "Jenny Offill", "225 pages", "Yes");
-addBookToLibrary("The Girls", "Emma Cline", "175 pages", "Yes");
-addBookToLibrary("Heat", "Bill Buford", "313 pages", "Yes");
+class Book {
+	constructor(name, author, length, read) {
+		this.name = name;
+		this.author = author;
+		this.length = length;
+		this.read = read;
+	}
 
-function Book(name, author, length, read) {
-	this.name = name;
-	this.author = author;
-	this.length = length;
-	this.read = read;
+	addBookToLibrary(array) {
+		array.push(this);
+		console.log(array);
+	}
 }
 
-function addBookToLibrary(name, author, length, read) {
-	const newBook = new Book(name, author, length, read);
-	myLibrary.push(newBook)
-}
+const batman = new Book("Batman", "Bob Kane", "27 pages", "No").addBookToLibrary(myLibrary);
+const slaughterhouse = new Book("Slaughterhouse-Five", "Kurt Vonnegut Jr.", "275 pages", "Yes").addBookToLibrary(myLibrary);
+const accounts = new Book("Fake Accounts", "Lauren Oyler", "181 pages", "No").addBookToLibrary(myLibrary);
+const nix = new Book("The Nix", "Nathan Hill", "625 pages", "Yes").addBookToLibrary(myLibrary);
+const weather = new Book("Weather", "Jenny Offill", "225 pages", "Yes").addBookToLibrary(myLibrary);
 
 function displayBooks(arr) {
 	const displayArea = document.getElementById("display");
@@ -142,7 +142,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		const newLength = storeInput("length");
 		const newRead = storeInput("read");
 
-		addBookToLibrary(newName, newAuthor, newLength, newRead);
+		const book = new Book(newName, newAuthor, newLength, newRead);
+		book.addBookToLibrary(myLibrary);
 		resetDisplay();
 		displayBooks(myLibrary);
 
