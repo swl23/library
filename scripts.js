@@ -1,13 +1,5 @@
 const myLibrary = [];
 
-class Library {
-	value = [];
-
-	displayBooks() {
-		
-	}
-}
-
 class Book {
 	constructor(name, author, length, read) {
 		this.name = name;
@@ -152,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		const book = new Book(newName, newAuthor, newLength, newRead);
 		book.addBookToLibrary(myLibrary);
-		/* addBookToLibrary(newName, newAuthor, newLength, newRead); */
 		resetDisplay();
 		displayBooks(myLibrary);
 
